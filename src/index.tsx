@@ -31,12 +31,16 @@ function Pages(){
   const transitions = useTransition(location, {
     from: {
       opacity: 0,
+      transform: 'translateY(10px)',
     },
     enter: {
       opacity: 1,
+      transform: 'translateY(0px)',
+      delay: 300,
     },
     leave: {
       opacity: 0,
+      transform: 'translateY(10px)',
     },
   });
 
@@ -45,11 +49,13 @@ function Pages(){
       {
         transitions((props, item) => (
           <animated.div style={props}>
-            <Routes location={item}>
-              <Route path="/" element={<Main />} />
-              <Route path="/works" element={<Works />} />
-              <Route path="*" element={<Navigate to="/" /> } />
-            </Routes>
+            <div style={{position: 'absolute'}}>
+              <Routes location={item}>
+                <Route path="/" element={<Main />} />
+                <Route path="/works" element={<Works />} />
+                <Route path="*" element={<Navigate to="/" /> } />
+              </Routes>
+            </div>
           </animated.div>
         ))
       }
