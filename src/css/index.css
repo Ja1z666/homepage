@@ -60,14 +60,16 @@ body{
     left: 0;
     top: 0;
     width: 100%;
+    z-index: 12;
 }
 
 .header-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 15px;
+    padding: 20px 15px;
     max-width: 900px;
+    backdrop-filter: blur(8px);
 }
 
 .header .nav-links{
@@ -110,7 +112,7 @@ body{
 }
 
 .main{
-    margin-top: 90px;
+    margin-top: 72px;
 }
 
 .main .info{
@@ -253,5 +255,83 @@ body{
 .footer p{
     color: #6C6C6E;
     text-align: center;
-    margin-bottom: 40px;
+    margin: 40px 0px 40px 0px;
+}
+
+.works h2{
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0;
+}
+
+.blocks{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+}
+
+.block .title{
+    font-size: 20px;
+    margin: 20px 0px 0px 0px;
+    text-align: center;
+}
+
+.block .description{
+    font-size: 14px;
+    margin: 10px 0px 0px 0px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.block a{
+    color: #ffffff;
+}
+
+.block img{
+    border-radius: 13px;
+}
+
+@media(max-width: 470px){
+    .block .title{
+        font-size: 18px;
+    }
+    
+    .block .description{
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 425px){
+    .blocks{
+        grid-template-columns: repeat(1, 2fr);
+    }
+
+    .block .title{
+        font-size: 20px;
+    }
+    
+    .block .description{
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 360px){
+    .info h1{
+        font-size: 38px !important;
+    }
+
+    .info p{
+        font-size: 16px !important;
+    }
+
+    .about p{
+        font-size: 14px !important;
+    }
+
+    .i-love p{
+        font-size: 14px !important;
+    }
 }

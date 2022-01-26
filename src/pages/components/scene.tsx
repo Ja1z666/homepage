@@ -25,12 +25,12 @@ const Controls = () => {
 };
 
 const Model = () => {
-    const gltf = useLoader(GLTFLoader, "./model/scene.gltf");
+    const gltf = useLoader(GLTFLoader, "/model/scene.gltf");
     return (
         <>
             <primitive
                 object={gltf.scene}
-                scale={1 / 15}
+                scale={3.5}
                 rotation={[0, 0, 0]}
                 position={[0, 0, 0]}
             />
@@ -40,11 +40,12 @@ const Model = () => {
 
 export default function Scene() {
     return (
-        <div className="App">
-            <Canvas style={{ minHeight: "30vh" }} camera={{ fov: 75, position: [0, 10, 20] }}>
+        <div className="scene">
+            <Canvas style={{ minHeight: "300px"}} orthographic camera={{ zoom: 12, position: [0, 10, 20] }}>
                 <Suspense fallback={null}>
                     <Model />
-                    <ambientLight intensity={0.5} />
+                    <ambientLight intensity={0.4} />
+                    <pointLight position={[10, 10, 10]} intensity={0.8} />
                     <Controls />
                 </Suspense>
             </Canvas>
