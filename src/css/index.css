@@ -294,6 +294,10 @@ body{
     border-radius: 13px;
 }
 
+.content{
+    position: relative;
+}
+
 @media(max-width: 470px){
     .block .title{
         font-size: 18px;
