@@ -5,7 +5,7 @@ import './css/index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useTransition, animated } from 'react-spring';
-import { Main, Works, Scene, Navigation, Footer } from './pages';
+import { Main, Works, Shiki, DiscordBot, Scene, Navigation, Footer } from './pages';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -53,6 +53,8 @@ function Pages(){
               <Routes location={item}>
                 <Route path="/" element={<Main />} />
                 <Route path="/works" element={<Works />} />
+                <Route path="/works/shikimori.ts" element={<Shiki />} />
+                <Route path="/works/discord-bot" element={<DiscordBot />} />
                 <Route path="*" element={<Navigate to="/" /> } />
               </Routes>
             </div>

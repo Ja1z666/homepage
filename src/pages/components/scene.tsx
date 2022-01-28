@@ -46,6 +46,7 @@ export default function Scene() {
                     <Model />
                     <ambientLight intensity={0.4} />
                     <pointLight position={[10, 10, 10]} intensity={0.8} />
+                    <spotLight intensity={0.3} position={[10, 10, 10]} />
                     <Controls />
                 </Suspense>
             </Canvas>

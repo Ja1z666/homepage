@@ -8,7 +8,7 @@ function Works() {
         <h2>Works</h2>
         <div className="blocks">
           <div className="block">
-            <NavLink to="/">
+            <NavLink to="/works/shikimori.ts">
               <div>
                 <img src="/works/npm.png" alt="project img" />
                 <div className="text">
@@ -19,7 +19,7 @@ function Works() {
             </NavLink>
           </div>
           <div className="block">
-            <NavLink to="/">
+            <NavLink to="/works/discord-bot">
               <div>
                 <img src="/works/discord.png" alt="project img" />
                 <div className="text">
