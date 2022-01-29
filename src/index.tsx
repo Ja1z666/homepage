@@ -10,20 +10,31 @@ import { Main, Works, Shiki, DiscordBot, Scene, Navigation, Footer } from './pag
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Navigation />
-      <section className="main">
-        <div className="container">
-          <Scene />
-          <div className="content">
-            <Pages />
+      <ScrollToTop>
+        <Navigation />
+        <section className="main">
+          <div className="container">
+            <Scene />
+            <div className="content">
+              <Pages />
+            </div>
           </div>
-        </div>
-      </section>
-      <Footer />
+        </section>
+        <Footer />
+      </ScrollToTop>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+function ScrollToTop(props:any){
+  const location = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return <>{props.children}</>;
+};
 
 function Pages(){
   const location = useLocation();

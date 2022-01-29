@@ -10,7 +10,7 @@ function DiscordBot() {
             <h2>Discord bot</h2>
             <p className="date">2020</p>
         </div>
-        <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus assumenda alias rem, porro atque asperiores est distinctio veniam voluptas aliquam!</p>
+        <p className="description">Multifunctional discord bot, with its own database for storing user statistics and a large list of commands. The bot can be viewed on the server, the link is listed below.</p>
         <div className="info-block">
             <div className="app-info">
                 <p className="p-block">WEBSITE</p>
