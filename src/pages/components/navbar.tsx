@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { animated, useSpring } from "react-spring";
+import { transform } from "typescript";
 
 function Navbar() {
   return (
@@ -20,21 +22,26 @@ function Navbar() {
 function DropdownMenu(props:any){
   const [open, setOpen] = useState(false);
 
+  const style = useSpring({
+    transform: open ? 'translate(0px, 0px)' : 'translate(10px, -10px)',
+    opacity: open ? 1 : 0
+  });
+
   return(
     <>
       <button className="burger btn-reset" onClick={() => setOpen(!open)}><svg width="30px" height="52px" viewBox="0 0 52 52" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><path d="M50,12.5H2a2,2,0,0,1,0-4H50a2,2,0,0,1,0,4Z"/><path d="M50,28H2a2,2,0,0,1,0-4H50a2,2,0,0,1,0,4Z"/><path d="M50,43.5H2a2,2,0,0,1,0-4H50a2,2,0,0,1,0,4Z"/></svg></button>
       {open && (
-        <div className="dropdown-menu">
-        <NavLink to="/" onClick={() => setOpen(!open)}>
-          About
-        </NavLink>
-        <NavLink to="/works" onClick={() => setOpen(!open)}>
-          Works
-        </NavLink>
-        <a href="https://github.com/Ja1z666/portfolio-website">
-          View Source
-        </a>
-        </div>
+        <animated.div className="dropdown-menu" style={ style }>
+          <NavLink to="/" onClick={() => setOpen(!open)}>
+            About
+          </NavLink>
+          <NavLink to="/works" onClick={() => setOpen(!open)}>
+            Works
+          </NavLink>
+          <a href="https://github.com/Ja1z666/portfolio-website">
+            View Source
+          </a>
+        </animated.div>
       )}
     </>
   )
